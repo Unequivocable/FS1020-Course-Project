@@ -1,0 +1,30 @@
+{
+  "name": "fs1020-course-project",
+  "version": "1.0.0",
+  "description": "FS1020 Course Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm index.js",
+    "dev": "nodemon -r esm index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/Unequivocable/fs1020-course-project.git"
+  },
+  "author": "Dustin Siggelkow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Unequivocable/fs1020-course-project/issues"
+  },
+  "homepage": "https://gitlab.com/Unequivocable/fs1020-course-project#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "uuid": "^8.3.1"
+  }
+}
