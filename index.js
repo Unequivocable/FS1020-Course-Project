@@ -1,7 +1,6 @@
 import express from 'express'
 import entries from './src/entriesRoutes.js'
 import users from './src/usersRoutes.js'
-import auth from './src/authRoutes.js'
 import hasAllProps from './lib/middleware/validateMw'
 
 const app = express()
@@ -14,8 +13,6 @@ app.use(hasAllProps)
 app.use('/', entries)
 
 app.use('/', users)
-
-app.use('/', auth)
 
 //Error handler
 
