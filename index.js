@@ -4,21 +4,31 @@ import users from './src/usersRoutes.js'
 import hasAllProps from './lib/middleware/validateMw'
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 app.use(express.json())
 
-app.use(hasAllProps)
+// Middleware to validate appropriate fields are sent and they contain appropriate data
 
-app.use('/', entries)
+app.use(hasAllProps)
 
 app.use('/', users)
 
-//Error handler
+app.use('/', entries)
+
+//Error handlers
+
+app.use((req, res, next) => {
+  res.status(404).json( { "message": "Not Found" } )
+})
 
 app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    res.status(403).json( { "message": err.inner.message} )
+    } else {
   console.error(err.stack)
-  return res.status(500).send({error: "An unexpected error has ended this request"})
+  return res.status(500).send( { error: "An unexpected error has ended this request" } )
+    }
 })
 
 export default app.listen(PORT, function () {
