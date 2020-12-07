@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node -r esm index.js",
-    "dev": "nodemon -r esm index.js",
+    "dev": "nodemon -r esm -r dotenv/config index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,9 +22,12 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
+    "argon2": "^0.27.0",
+    "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
     "uuid": "^8.3.1"
   }
 }
