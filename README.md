@@ -9,8 +9,7 @@ Use 'npm start' to start the app listening on port 3000--accessible at http://lo
     Routes to POST a user or Auth a user are in src/usersRoutes.js
     Routes to POST a new contact us entry or to GET existing entries are in src/entriesRoutes.js
 Use 'npm dev' to start the app with nodemon to allow for auto-restarts upon editing/saving any of the core documents
-
-Persistant data will be stored in a JSON file and accessed via FS (note: file not created yet)
+Create two files named 'users.json' and 'entires.json' in the /data folder and ensure both contain an empty array [].
 
 Entries can be created at POST /contact_form/entries
     New entries require the following properties:
