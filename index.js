@@ -1,7 +1,7 @@
 import express from "express";
 import entries from "./src/entriesRoutes.js";
 import users from "./src/usersRoutes.js";
-import hasAllProps from "./lib/middleware/validate";
+import hasAllProps from "./lib/middleware/propsValidate";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,12 +19,12 @@ app.use("/", users);
 //Error handlers
 
 app.use((req, res, next) => {
-  res.status(404).json({ message: "Not Found" });
+  return res.status(404).json({ message: "Not Found" });
 });
 
 app.use((err, req, res, next) => {
   if (err.name === "UnauthorizedError") {
-    console.error(err)
+    console.error(err);
     res.status(403).json({ message: err.inner.message });
   } else {
     console.error(err.stack);
