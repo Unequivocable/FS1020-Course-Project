@@ -1,8 +1,8 @@
 # FS1020 Course Project
 
-FS1020 Course Project - RESTful API for contact info
+Course Project - RESTful API for contact info
 
-This will create a RESTful API for a 'contact us' form.
+This was a project for creating RESTful API for a 'contact us' form.
 
 Use 'npm start' to start the app listening on port 3000--accessible at http://localhost:3000.
     Configure the index.js to change port numbers or listening details.
